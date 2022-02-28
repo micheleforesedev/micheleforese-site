@@ -1,22 +1,36 @@
 /** @type {import('gatsby').GatsbyConfig} */
 module.exports = {
   siteMetadata: {
-      title: ``,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `micheleforese`,
+    siteUrl: `https://micheleforese.com`,
   },
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  plugins: [
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-image",
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve(`./src/templates/doc.tsx`),
+        },
+      },
     },
-    __key: "images"
-  }, {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
     },
-    __key: "pages"
-  }]
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `docs`,
+        path: `${__dirname}/src/docs/`,
+      },
+    },
+  ],
 };
