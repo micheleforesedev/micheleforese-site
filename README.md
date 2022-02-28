@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  [micheleforese.com](micheleforese.com)
+  micheleforese.com
 </h1>
 
 # micheleforese.com
