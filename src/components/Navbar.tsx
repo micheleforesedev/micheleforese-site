@@ -8,6 +8,10 @@ function Navbar() {
       name: "Home",
     },
     {
+      to: "/university",
+      name: "University"
+    },
+    {
       to: "/docs",
       name: "Docs",
     },
